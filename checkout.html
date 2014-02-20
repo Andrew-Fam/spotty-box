@@ -4,538 +4,539 @@
 <!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<title>
-		Check out
-	</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="public/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all"/>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="public/webfonts/stylesheet.css" type="text/css" media="all"/>
-	<link href="public/css/spotty-box.min.css" rel="stylesheet" type="text/css" media="all"/>
-	<link href="public/css/angucomplete.min.css" rel="stylesheet" type="text/css" media="all"/>
-	<!-- TODO: Complete this project :) -->
+    <head>
+        <meta charset="utf-8">
+        <title>
+	Check out
+</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="public/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="public/webfonts/stylesheet.css" type="text/css" media="all"/>
+        <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="public/css/spotty-box.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="public/css/angucomplete.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <!-- TODO: Complete this project :) -->
         <!--[if IE]>
             <script src="public/js/placeholders.min.js"></script>
-            <![endif]-->
+        <![endif]-->
         <!--[if lt IE 9]>
             <link rel="stylesheet" href="public/css/ie8.css" type="text/css" media="all"/>
             <script src="public/js/respond.min.js"></script>
             <script src="public/js/modernizr.custom.16001.min.js"></script>
-            <![endif]-->
-        </head>
-        <body class="checkout">
+        <![endif]-->
+    </head>
+    <body class="checkout">
+        
+            <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="visible-xs navbar-brand" href="index.html"><img src="public/imgs/spottybox.png"/></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="container">
+      <div class="row">
+        <div class="menu-wrap">
+          <div class="first-wrap col-sm-6 col-lg-4">
+            <ul class="nav navbar-nav first">
+              <li><a href="#"><!--<i class="paw"></i>-->In the box</a></li>
+              <li><a href="#"><!--<i class="paw"></i>-->Pricing</a></li>
+            </ul>
+          </div>
+          <div class="main-logo col-sm-2 col-lg-4 text-center"><a class="navbar-brand" href="index.html"><img src="public/imgs/spottybox.png"/></a></div>
+          <div class="last-wrap col-sm-6 col-lg-4">
+            <ul class="nav navbar-nav last">
+              <li><a href="#"><!--<i class="paw"></i>-->Send a gift</a></li>
+              <li class="emphasized">  <a href="checkout.html">Get Started</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.navbar-collapse -->
+</nav>
+        
+        <section class="main">
+            
+<div class="background checkout">
+	<div class="overlay">
+	</div>
+</div>
+<div class="wrap" ng-app="spottyBox" ng-controller="checkoutCtrl" ng-cloak>
+	<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3><img class="ornament" src="public/imgs/ornaments-left.png" />{[{ header }]}<img class="ornament" src="public/imgs/ornaments-right.png" /></h3>
+        </div>
+        <div class="modal-body">
         	
-        	<nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        		<!-- Brand and toggle get grouped for better mobile display -->
-        		<div class="navbar-header">
-        			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        				<span class="sr-only">Toggle navigation</span>
-        				<span class="icon-bar"></span>
-        				<span class="icon-bar"></span>
-        				<span class="icon-bar"></span>
-        			</button>
-        			<a class="visible-xs navbar-brand" href="index.html"><img src="public/imgs/spottybox.png"/></a>
-        		</div>
+            <p> {[{ message }]}</p> 
+        </div>
+        <div class="modal-footer">
+        	<a ng-click="cancel()">I see.</a>
+       	</div>
+    </script>
+	<div class="checkout-progress">
+		<div class="container">
+			<ul class="progress-indicator">
+				<li class="indicator checkpoint active" >  
+					<a href='#checkout-wizard' data-slide-to='0'>
+						<span class="icon"><i class="fa fa-circle"></i></span>
+						<span class="caption">Tell us about your dog</span>
+					</a>
+				</li>  
+				<li class="delimitor">
 
-        		<!-- Collect the nav links, forms, and other content for toggling -->
-        		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        			<div class="container">
-        				<div class="row">
-        					<div class="menu-wrap">
-        						<div class="first-wrap col-sm-6 col-lg-4">
-        							<ul class="nav navbar-nav first">
-        								<li><a href="#"><!--<i class="paw"></i>-->In the box</a></li>
-        								<li><a href="#"><!--<i class="paw"></i>-->Pricing</a></li>
-        							</ul>
-        						</div>
-        						<div class="main-logo col-sm-2 col-lg-4 text-center"><a class="navbar-brand" href="index.html"><img src="public/imgs/spottybox.png"/></a></div>
-        						<div class="last-wrap col-sm-6 col-lg-4">
-        							<ul class="nav navbar-nav last">
-        								<li><a href="#"><!--<i class="paw"></i>-->Send a gift</a></li>
-        								<li class="emphasized">  <a href="checkout.html">Get Started</a></li>
-        							</ul>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        		</div><!-- /.navbar-collapse -->
-        	</nav>
-        	
-        	<section class="main">
-        		
-        		<div class="background checkout">
-        			<div class="overlay">
-        			</div>
-        		</div>
-        		<div class="wrap" ng-app="spottyBox" ng-controller="checkoutCtrl" ng-cloak>
-        			<script type="text/ng-template" id="myModalContent.html">
-        			<div class="modal-header">
-        			<h3><img class="ornament" src="public/imgs/ornaments-left.png" />{[{ header }]}<img class="ornament" src="public/imgs/ornaments-right.png" /></h3>
-        			</div>
-        			<div class="modal-body">
-        			
-        			<p> {[{ message }]}</p> 
-        			</div>
-        			<div class="modal-footer">
-        			<a ng-click="cancel()">I see.</a>
-        			</div>
-        			</script>
-        			<div class="checkout-progress">
-        				<div class="container">
-        					<ul class="progress-indicator">
-        						<li class="indicator checkpoint active" >  
-        							<a href='#checkout-wizard' data-slide-to='0'>
-        								<span class="icon"><i class="fa fa-circle"></i></span>
-        								<span class="caption">Tell us about your dog</span>
-        							</a>
-        						</li>  
-        						<li class="delimitor">
+				</li>  
+				<li class="indicator checkpoint">					
+					<a href='#checkout-wizard' data-slide-to='1'>
+						<span class="icon"><i class="fa fa-circle"></i></span>
+						<span class="caption">Choose <br> a plan</span>
+					</a>
+				</li>  
+				<li class="delimitor">
+						
+				</li> 
+				<li class="indicator checkpoint">	
+					<a href='#checkout-wizard' data-slide-to='2'>
+						<span class="icon"><i class="fa fa-circle"></i></span>
+						<span class="caption">Tell us about yourself</span>
+					</a>
+				</li>  
+				<li class="delimitor">
+						
+				</li>   
+				<li class="indicator final">
+					<a href='#checkout-wizard' data-slide-to='3'>
+						<span class="icon"><i class="fa fa-check"></i></span>
+						<span class="caption">All done!</span>
+					</a>
+				</li>  
+				<li class="clearfix">
+				</li>
+			</ul>
+		</div>
+		<div class="checkout-wizard">
+			<form id="checkout-form" name="checkout-form">
+				<div class="sliding-wizard">
+					<div class="container">
+						<div id="checkout-wizard" class="carousel slide" data-interval="false">
+							<div class="carousel-inner">
+								<div class="item active" data-step="0">
+									<div class="container">
+										<div class="clearfix pup-list ng-cloak"  ng-if="!addingDog">
+											<div class="panel-with-header">
+												<h1 class="text-center title"><img class="ornament" src="public/imgs/ornaments-left.png" />Your pack<img class="ornament" src="public/imgs/ornaments-right.png" /></h1>
+										
+												<div class="dogs content">
+													<ul>
+														<li ng-repeat="dog in newOrder.dogs">
+															<div class="dog row">
+																<div class="info">
+																	<label>{[{ dog.name }]} <a ng-click="removeDog(dog)"><i class="fa fa-times"></i></a></label>
+																	<p class="pull-left">
+																		born in {[{ dog.birthMonth.title }]} - weighing {[{ dog.dogSize.desc }]}
+																	</p>
+																</div>
+															</div>
+														</li>
+													</ul>
 
-        						</li>  
-        						<li class="indicator checkpoint">					
-        							<a href='#checkout-wizard' data-slide-to='1'>
-        								<span class="icon"><i class="fa fa-circle"></i></span>
-        								<span class="caption">Choose <br> a plan</span>
-        							</a>
-        						</li>  
-        						<li class="delimitor">
-        							
-        						</li> 
-        						<li class="indicator checkpoint">	
-        							<a href='#checkout-wizard' data-slide-to='2'>
-        								<span class="icon"><i class="fa fa-circle"></i></span>
-        								<span class="caption">Tell us about yourself</span>
-        							</a>
-        						</li>  
-        						<li class="delimitor">
-        							
-        						</li>   
-        						<li class="indicator final">
-        							<a href='#checkout-wizard' data-slide-to='3'>
-        								<span class="icon"><i class="fa fa-check"></i></span>
-        								<span class="caption">All done!</span>
-        							</a>
-        						</li>  
-        						<li class="clearfix">
-        						</li>
-        					</ul>
-        				</div>
-        				<div class="checkout-wizard">
-        					<form id="checkout-form" name="checkout-form">
-        						<div class="sliding-wizard">
-        							<div class="container">
-        								<div id="checkout-wizard" class="carousel slide" data-interval="false">
-        									<div class="carousel-inner">
-        										<div class="item active" data-step="0">
-        											<div class="container">
-        												<div class="clearfix pup-list ng-cloak"  ng-if="!addingDog">
-        													<div class="panel-with-header">
-        														<h1 class="text-center title"><img class="ornament" src="public/imgs/ornaments-left.png" />Your pack<img class="ornament" src="public/imgs/ornaments-right.png" /></h1>
-        														
-        														<div class="dogs content">
-        															<ul>
-        																<li ng-repeat="dog in newOrder.dogs">
-        																	<div class="dog row">
-        																		<div class="info">
-        																			<label>{[{ dog.name }]} <a ng-click="removeDog(dog)"><i class="fa fa-times"></i></a></label>
-        																			<p class="pull-left">
-        																				born in {[{ dog.birthMonth.title }]} - weighing {[{ dog.dogSize.desc }]}
-        																			</p>
-        																		</div>
-        																	</div>
-        																</li>
-        															</ul>
+												</div>
+												<div class="summary">
+													<label>
+														Total: 
+													</label>
+													{[{ newOrder.dogs.length }]}
+												</div>
+											</div>
+											<div class="controls">
+												<div class="wrap">
+													<a class="btn btn-default pull-left" ng-click="startAddingDog()"> <i class="fa fa-plus"></i> Add another</a>
+													<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep1()"> Next <i class="fa fa-arrow-right"></i></a>
+													<div class="clearfix">
+													</div>
+												</div>
+												<div class="gradient-border">
+												</div>
+											</div>
+										</div>
+										<div ng-if="addingDog" ng-cloak>
+											<div class="panel-with-header">
+												<h1 class="title">{[{ newOrder.dogs.length > 0 ? 'Add another one' : 'Tell us about your dog'}]}</h1>
+												<div class="content">
+													<fieldset class="row">
+														<div class="col-sm-6">
+															<input type="text" name="pups-name" ng-model="newDog.name" class="full-width" placeholder="Pup's name"/>
+														</div>
+														<div class="col-sm-6">
+															<div angucomplete 
+												              placeholder="Birth month"
+												              pause="100" 
+												              selectedobject="newDog.birthMonth" 
+												              localdata="months" 
+												              searchfields="name"
+												              titlefield="name"
+												              minlength="1"
+												              inputclass="form-control full-width form-control-small"/>
+														</div>
+													</fieldset>
+													<h2>How big is your dog?</h2>
+													<fieldset class="row">
+														<div class="col-sm-12">
+															<div class="btn-group clearfix">
+																<a class="btn btn-default size-selector" ng-class="{checked: size.id == newDog.dogSize.id}" ng-repeat="size in sizes" ng-click="changeDogSize($event,size)">
+																	<div class="wrap">
+																		<label class="title">{[{ size.label }]}</label>
+																		<p class="description">{[{ size.desc }]}</p>
+																	</div>
+																</a>
+															</div>
+														</div>
+													</fieldset>
+												</div>
+											</div>
+											<div class="controls">
+												<div class="wrap">
+													<a class="btn btn-primary pull-right" ng-click="addNewDog()"> <i class="fa fa-plus"></i> Add to pack</a>
+													<!--<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep1()"> Next <i class="fa fa-arrow-right"></i></a>-->
+													<div class="clearfix">
+													</div>
+												</div>
+												<div class="gradient-border">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item" data-step="1">
+									<div class="container">
+										
+										
+										<div class="panel-with-header">
+	<h1 class="title">
+		Choose a plan
+	</h1>
+	<div class="content">
+		
+										<!-- this is a place holder, to be replaced -->
+										<fieldset class="row">
+											<div class="col-sm-12">
+												<div class="btn-group clearfix">
+													<a class="btn btn-default size-selector" ng-class="{checked: plan.id == newOrder.plan.id}" ng-repeat="plan in plans" ng-click="changePlan($event,plan)">
+														<div class="wrap">
+															<label class="title">{[{ plan.label }]}</label>
+															<p class="description">{[{ plan.desc }]}</p>
+														</div>
+													</a>
+												</div>
+											</div>
+										</fieldset>
+										
+	</div>
+</div>
+										<div class="controls">
+											<div class="wrap">
+												<a class="btn btn-default pull-left" ng-click="backToStep1()"> <i class="fa fa-arrow-left"></i> Back</a>
+												<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep2()"> Next <i class="fa fa-arrow-right"></i></a>
+												<div class="clearfix">
+												</div>
+											</div>
+											<div class="gradient-border">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item" data-step="2">
+									<div class="container">
+										
+										
+										<div class="panel-with-header">
+	<h1 class="title">
+		Order summary
+	</h1>
+	<div class="content">
+		
+											{[{newOrder.dogs.length}]} dog{[{newOrder.dogs.length>1?'s':''}]} x {[{newOrder.plan.label}]} plan ({[{newOrder.plan.desc}]}) = <strong>${[{newOrder.dogs.length*newOrder.plan.price}]} per month</strong>
+										
+	</div>
+</div>
+										<br/>
+										
+										
+										<div class="panel-with-header">
+	<h1 class="title">
+		Tell us about yourself
+	</h1>
+	<div class="content">
+		
+										<!-- this is a place holder, to be replaced -->
+										<h2>Shipping details</h2>
+										<fieldset class="row">
+											<div class="col-sm-6">
+												<input type="text" name="first-name" ng-model="newOrder.billing.firstName" class="full-width required" placeholder="First name"/>
+											</div>
+											<div class="col-sm-6">
+												<input type="text" name="last-name" ng-model="newOrder.billing.lastName" class="full-width required" placeholder="Last name"/>
+											</div>
+										</fieldset>
+										<fieldset class="row">
+											<div class="col-sm-12">
+												<input type="text" name="address" ng-model="newOrder.billing.address" class="full-width required" placeholder="Address"/>
+											</div>
+										</fieldset>
+										<fieldset class="row">
+											<div class="col-sm-6">
+												<input type="text" name="suburb" ng-model="newOrder.billing.suburb" class="full-width required" placeholder="Suburb"/>
+											</div>
+											<div class="col-sm-3">
+												<input type="text" name="state" ng-model="newOrder.billing.state" class="full-width required" maxlength="3" placeholder="State"/>
+											</div>
+											<div class="col-sm-3">
+												<input type="text" name="postcode" ng-model="newOrder.billing.postcode" class="full-width required" maxlength="4"  placeholder="Postcode"/>
+											</div>
+										</fieldset>
+										<h2>Billing info</h2>
+										<fieldset class="row">
+											<div class="col-sm-6">
+												<input type="text" name="creditCardNumber" ng-model="newOrder.billing.creditcard" class="full-width required" placeholder="Credit card number"/>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" name="cvv" ng-model="newOrder.billing.cvv" class="full-width required" maxlength="3" placeholder="CVV"/>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" name="expiryMonth" ng-model="newOrder.billing.expiryMonth" class="full-width required" maxlength="2" placeholder="mm"/>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" name="year" ng-model="newOrder.billing.year" class="full-width required" maxlength="4" placeholder="yyyy"/>
+											</div>
+										</fieldset>
+										<h2>Your Spotty Box account</h2>
+										<fieldset class="row">
+											<div class="col-sm-6">
+												<input type="email" name="email" ng-model="newOrder.account.email" class="full-width required email" placeholder="Email address"/>
+											</div>
+											<div class="col-sm-6">
+												<input type="password" name="password" ng-model="newOrder.account.password" class="full-width required" placeholder="Make a password"/>
+											</div>
+										</fieldset>
+										<a class="btn btn-primary full-width" ng-click="subscribe()"><i class="fa-shopping-cart fa fa-fw"></i>Subscribe now!</a>
+										
+	</div>
+</div>
+									</div>
+									<br/>
+									<br/>
+									<br/>
+								</div>
+								<div class="item" data-step="3">
+									<div class="container">
+										
 
-        														</div>
-        														<div class="summary">
-        															<label>
-        																Total: 
-        															</label>
-        															{[{ newOrder.dogs.length }]}
-        														</div>
-        													</div>
-        													<div class="controls">
-        														<div class="wrap">
-        															<a class="btn btn-default pull-left" ng-click="startAddingDog()"> <i class="fa fa-plus"></i> Add another</a>
-        															<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep1()"> Next <i class="fa fa-arrow-right"></i></a>
-        															<div class="clearfix">
-        															</div>
-        														</div>
-        														<div class="gradient-border">
-        														</div>
-        													</div>
-        												</div>
-        												<div ng-if="addingDog" ng-cloak>
-        													<div class="panel-with-header">
-        														<h1 class="title">{[{ newOrder.dogs.length > 0 ? 'Add another one' : 'Tell us about your dog'}]}</h1>
-        														<div class="content">
-        															<fieldset class="row">
-        																<div class="col-sm-6">
-        																	<input type="text" name="pups-name" ng-model="newDog.name" class="full-width" placeholder="Pup's name"/>
-        																</div>
-        																<div class="col-sm-6">
-        																	<div angucomplete 
-        																	placeholder="Birth month"
-        																	pause="100" 
-        																	selectedobject="newDog.birthMonth" 
-        																	localdata="months" 
-        																	searchfields="name"
-        																	titlefield="name"
-        																	minlength="1"
-        																	inputclass="form-control full-width form-control-small"/>
-        																</div>
-        															</fieldset>
-        															<h2>How big is your dog?</h2>
-        															<fieldset class="row">
-        																<div class="col-sm-12">
-        																	<div class="btn-group clearfix">
-        																		<a class="btn btn-default size-selector" ng-class="{checked: size.id == newDog.dogSize.id}" ng-repeat="size in sizes" ng-click="changeDogSize($event,size)">
-        																			<div class="wrap">
-        																				<label class="title">{[{ size.label }]}</label>
-        																				<p class="description">{[{ size.desc }]}</p>
-        																			</div>
-        																		</a>
-        																	</div>
-        																</div>
-        															</fieldset>
-        														</div>
-        													</div>
-        													<div class="controls">
-        														<div class="wrap">
-        															<a class="btn btn-primary pull-right" ng-click="addNewDog()"> <i class="fa fa-plus"></i> Add to pack</a>
-        															<!--<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep1()"> Next <i class="fa fa-arrow-right"></i></a>-->
-        															<div class="clearfix">
-        															</div>
-        														</div>
-        														<div class="gradient-border">
-        														</div>
-        													</div>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="item" data-step="1">
-        											<div class="container">
-        												
-        												
-        												<div class="panel-with-header">
-        													<h1 class="title">
-        														Choose a plan
-        													</h1>
-        													<div class="content">
-        														
-        														<!-- this is a place holder, to be replaced -->
-        														<fieldset class="row">
-        															<div class="col-sm-12">
-        																<div class="btn-group clearfix">
-        																	<a class="btn btn-default size-selector" ng-class="{checked: plan.id == newOrder.plan.id}" ng-repeat="plan in plans" ng-click="changePlan($event,plan)">
-        																		<div class="wrap">
-        																			<label class="title">{[{ plan.label }]}</label>
-        																			<p class="description">{[{ plan.desc }]}</p>
-        																		</div>
-        																	</a>
-        																</div>
-        															</div>
-        														</fieldset>
-        														
-        													</div>
-        												</div>
-        												<div class="controls">
-        													<div class="wrap">
-        														<a class="btn btn-default pull-left" ng-click="backToStep1()"> <i class="fa fa-arrow-left"></i> Back</a>
-        														<a class="btn btn-primary pull-right" ng-click="checkoutValidateStep2()"> Next <i class="fa fa-arrow-right"></i></a>
-        														<div class="clearfix">
-        														</div>
-        													</div>
-        													<div class="gradient-border">
-        													</div>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="item" data-step="2">
-        											<div class="container">
-        												
-        												
-        												<div class="panel-with-header">
-        													<h1 class="title">
-        														Order summary
-        													</h1>
-        													<div class="content">
-        														
-        														{[{newOrder.dogs.length}]} dog{[{newOrder.dogs.length>1?'s':''}]} x {[{newOrder.plan.label}]} plan ({[{newOrder.plan.desc}]}) = <strong>${[{newOrder.dogs.length*newOrder.plan.price}]} per month</strong>
-        														
-        													</div>
-        												</div>
-        												<br/>
-        												
-        												
-        												<div class="panel-with-header">
-        													<h1 class="title">
-        														Tell us about yourself
-        													</h1>
-        													<div class="content">
-        														
-        														<!-- this is a place holder, to be replaced -->
-        														<h2>Shipping details</h2>
-        														<fieldset class="row">
-        															<div class="col-sm-6">
-        																<input type="text" name="first-name" ng-model="newOrder.billing.firstName" class="full-width required" placeholder="First name"/>
-        															</div>
-        															<div class="col-sm-6">
-        																<input type="text" name="last-name" ng-model="newOrder.billing.lastName" class="full-width required" placeholder="Last name"/>
-        															</div>
-        														</fieldset>
-        														<fieldset class="row">
-        															<div class="col-sm-12">
-        																<input type="text" name="address" ng-model="newOrder.billing.address" class="full-width required" placeholder="Address"/>
-        															</div>
-        														</fieldset>
-        														<fieldset class="row">
-        															<div class="col-sm-6">
-        																<input type="text" name="suburb" ng-model="newOrder.billing.suburb" class="full-width required" placeholder="Suburb"/>
-        															</div>
-        															<div class="col-sm-3">
-        																<input type="text" name="state" ng-model="newOrder.billing.state" class="full-width required" maxlength="3" placeholder="State"/>
-        															</div>
-        															<div class="col-sm-3">
-        																<input type="text" name="postcode" ng-model="newOrder.billing.postcode" class="full-width required" maxlength="4"  placeholder="Postcode"/>
-        															</div>
-        														</fieldset>
-        														<h2>Billing info</h2>
-        														<fieldset class="row">
-        															<div class="col-sm-6">
-        																<input type="text" name="creditCardNumber" ng-model="newOrder.billing.creditcard" class="full-width required" placeholder="Credit card number"/>
-        															</div>
-        															<div class="col-sm-2">
-        																<input type="text" name="cvv" ng-model="newOrder.billing.cvv" class="full-width required" maxlength="3" placeholder="CVV"/>
-        															</div>
-        															<div class="col-sm-2">
-        																<input type="text" name="expiryMonth" ng-model="newOrder.billing.expiryMonth" class="full-width required" maxlength="2" placeholder="mm"/>
-        															</div>
-        															<div class="col-sm-2">
-        																<input type="text" name="year" ng-model="newOrder.billing.year" class="full-width required" maxlength="4" placeholder="yyyy"/>
-        															</div>
-        														</fieldset>
-        														<h2>Your Spotty Box account</h2>
-        														<fieldset class="row">
-        															<div class="col-sm-6">
-        																<input type="email" name="email" ng-model="newOrder.account.email" class="full-width required email" placeholder="Email address"/>
-        															</div>
-        															<div class="col-sm-6">
-        																<input type="password" name="password" ng-model="newOrder.account.password" class="full-width required" placeholder="Make a password"/>
-        															</div>
-        														</fieldset>
-        														<a class="btn btn-primary full-width" ng-click="subscribe()"><i class="fa-shopping-cart fa fa-fw"></i>Subscribe now!</a>
-        														
-        													</div>
-        												</div>
-        											</div>
-        											<br/>
-        											<br/>
-        											<br/>
-        										</div>
-        										<div class="item" data-step="3">
-        											<div class="container">
-        												
+										
+										
+										<div class="panel-with-header">
+	<h1 class="title">
+		Order confirmation
+	</h1>
+	<div class="content">
+		
+										<!-- this is a place holder, to be replaced -->
+										Congrats! Your dogs love you!
+										
+	</div>
+</div>
+										<br/>
+										<br/>
+										<br/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 
-        												
-        												
-        												<div class="panel-with-header">
-        													<h1 class="title">
-        														Order confirmation
-        													</h1>
-        													<div class="content">
-        														
-        														<!-- this is a place holder, to be replaced -->
-        														Congrats! Your dogs love you!
-        														
-        													</div>
-        												</div>
-        												<br/>
-        												<br/>
-        												<br/>
-        											</div>
-        										</div>
-        									</div>
-        								</div>
-        							</div>
-        						</div>
-        					</form>
-        				</div>
+	</div>
+</div>
 
-        			</div>
-        		</div>
-
-        		<div class="cta">
-        			<div class="container">
-        				<div class="row">
-        					<div class="col-xs-12 col-md-4">	
-        						<div class="satisfactory-badge">
-        							<div class="text-center">
-        								<img src="public/imgs/satisfaction-stamp.png" alt="100% satisfactory guaranteed" />
-        							</div>
-        							<h4 class="text-center">
-        								Everybody gets their boxes sent out to them on the <strong>15th of every month.</strong>
-        							</h4>
-        							<h5 class="text-center tiny-text">
-        								Remember if you’re unhappy with the product, we’d be happy to give you a 100% refund, no questions asked! 
-        							</h5>
-        						</div>
-        					</div>
-        					<div class="col-sm-6 col-md-4">
-        						<img src="public/imgs/donate.jpg" alt="we donate to dog shelter"/>
-        					</div>
-        					<div class="col-sm-6 col-md-4">
-        						<img src="public/imgs/whats-in-the-box.jpg" alt="what goes in the box"/>
-        					</div>
-        				</div>
-        			</div>
-        		</div>
+<div class="cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-4">	
+				<div class="satisfactory-badge">
+					<div class="text-center">
+						<img src="public/imgs/satisfaction-stamp.png" alt="100% satisfactory guaranteed" />
+					</div>
+					<h4 class="text-center">
+						Everybody gets their boxes sent out to them on the <strong>15th of every month.</strong>
+					</h4>
+					<h5 class="text-center tiny-text">
+						Remember if you’re unhappy with the product, we’d be happy to give you a 100% refund, no questions asked! 
+					</h5>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<img src="public/imgs/donate.jpg" alt="we donate to dog shelter"/>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<img src="public/imgs/whats-in-the-box.jpg" alt="what goes in the box"/>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
 
-        		<div class="testimonials-carousel">
-        			<div class="container">
-        				<div class="carousel slide" data-ride="carousel" data-interval="3000">
-        					<div class="carousel-inner">
-        						
-        						<div class="item active">
-        							
-        							
-        							
-        							<div class="testimonial">
-        								<p class="quote">
-        									&ldquo;Tom knows when the box is about to arrive! It’s the cutest thing! Thanks Spottybox!&rdquo;
-        								</p>
-        								<div class="person">
-        									<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
-        									- <span class="name"> Sammy </span>
-        								</div>
-        							</div>
-        						</div>
-        						<div class="item">
-        							
-        							
-        							
-        							<div class="testimonial">
-        								<p class="quote">
-        									&ldquo;When the box is about to arrive, Drew knows! There's nothing cuter! Mucha Gracias Spottybox!&rdquo;
-        								</p>
-        								<div class="person">
-        									<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
-        									- <span class="name"> John </span>
-        								</div>
-        							</div>
-        						</div>
-        						<div class="item">
-        							
-        							
-        							
-        							<div class="testimonial">
-        								<p class="quote">
-        									&ldquo;About to arive the box is, knows when Mark! The cutest thing, it is! Spottybox, thanks!&rdquo;
-        								</p>
-        								<div class="person">
-        									<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
-        									- <span class="name"> Shaurene </span>
-        								</div>
-        							</div>
-        						</div>
+<div class="testimonials-carousel">
+	<div class="container">
+		<div class="carousel slide" data-ride="carousel" data-interval="3000">
+			<div class="carousel-inner">
+				
+	<div class="item active">
+		
+		
+		
+		<div class="testimonial">
+	<p class="quote">
+		&ldquo;Tom knows when the box is about to arrive! It’s the cutest thing! Thanks Spottybox!&rdquo;
+	</p>
+	<div class="person">
+		<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
+		- <span class="name"> Sammy </span>
+	</div>
+</div>
+	</div>
+	<div class="item">
+		
+		
+		
+		<div class="testimonial">
+	<p class="quote">
+		&ldquo;When the box is about to arrive, Drew knows! There's nothing cuter! Mucha Gracias Spottybox!&rdquo;
+	</p>
+	<div class="person">
+		<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
+		- <span class="name"> John </span>
+	</div>
+</div>
+	</div>
+	<div class="item">
+		
+		
+		
+		<div class="testimonial">
+	<p class="quote">
+		&ldquo;About to arive the box is, knows when Mark! The cutest thing, it is! Spottybox, thanks!&rdquo;
+	</p>
+	<div class="person">
+		<img class="thumb" src="public/imgs/testee-thumb.jpg"/>
+		- <span class="name"> Shaurene </span>
+	</div>
+</div>
+	</div>
 
-        					</div>
-        				</div>
-        			</div>
-        		</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
-        	</section>
-        	<footer>
-        		<div class="nav">
-        			<div class="container">
-        				<div class="col-sm-3">
-        					<h4>Site</h4>
-        					<ul>
-        						<li>
-        							<a href="#">Home</a>
-        						</li>
-        						<li>
-        							<a href="#">In the box</a>
-        						</li>
-        						<li>
-        							<a href="#">Pricing</a>
-        						</li>
-        						<li>
-        							<a href="#">Buy</a>
-        						</li>
-        					</ul>
-        				</div>
-        				<div class="col-sm-3">
-        					<h4>About</h4>
-        					<ul>
-        						<li>
-        							<a href="#">About Spottybox</a>
-        						</li>
-        						<li>
-        							<a href="#">FAQ</a>
-        						</li>
-        						<li>
-        							<a href="#">The team</a>
-        						</li>
-        						<li>
-        							<a href="#">Contact Us</a>
-        						</li>
-        					</ul>
-        				</div>
-        				<div class="col-sm-3">
-        					<h4>Social</h4>
-        					<a href="" class="fa-stack" title="follow Spottybox on Facebook!">
-        						<i class="fa fa-circle fa-stack-2x"></i>
-        						<i class="fa fa-facebook fa-stack-1x fa-inverse fa-fw"></i>
-        					</a> 
-        					<a href="" class="fa-stack" title="follow Spottybox on twitter!">
-        						<i class="fa fa-circle fa-stack-2x"></i>
-        						<i class="fa fa-twitter fa-stack-1x fa-inverse fa-fw"></i>
-        					</a> 
-        					<a href="" class="fa-stack" title="follow Spottybox on instagram!">
-        						<i class="fa fa-circle fa-stack-2x"></i>
-        						<i class="fa fa-instagram fa-stack-1x fa-inverse fa-fw"></i>
-        					</a>
-        				</div>
-        				<div class="col-sm-3">
-        					<a id="subservice-link" href="http://subservice.co" title="Go to subservice.co"><img src="public/imgs/subservice-logo.png"/></a>
-        				</div>
-        			</div>
-        		</div>
-        		<div class="container">
-        			<div class="copyright row">
-        				<div class="col-sm-6 col-sm-offset-3 text-center">
-        					&copy;Spottybox 2012 - 2013 All Rights Reserved
-        				</div>
-        				<a href="http://capsule.vc" title="go to capsule.vc" id="capsule-link">
-        					<img width="129" height="32" src="public/imgs/capsule-logo.png" alt="got to capsule.vc"/>
-        				</a>
-        			</div>
-        		</div>
-        	</footer>
-        	
-        	<script src="public/js/jquery-1.11.0.min.js"></script>
-        	<script src="public/js/jquery-ui-1.10.4.custom.min.js"></script>
-        	<script src="public/js/jquery.validate.min.js"></script>
-        	<script src="public/js/retina-1.1.0.min.js"></script>
-        	<script src="public/js/bootstrap.min.js"></script>
-        	<script src="public/js/spotty-box.min.js"></script>
-        	
-        	<script src="public/js/angular/angular.min.js"></script>
-        	<script src="public/js/angular/angular-route.min.js"></script>
-        	<script src="public/js/angular/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
-        	<script src="public/js/controllers/checkout.min.js"></script>
-        	<script src="public/js/angucomplete.min.js"></script>
-        	<script src="public/js/controllers/checkout.js" ></script>
-        	<script src="public/js/app.js" ></script>
-        	
+        </section>
+        <footer>
+            <div class="nav">
+                <div class="container">
+                    <div class="col-sm-3">
+                        <h4>Site</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">In the box</a>
+                            </li>
+                            <li>
+                                <a href="#">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#">Buy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>About</h4>
+                        <ul>
+                            <li>
+                                <a href="#">About Spottybox</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">The team</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>Social</h4>
+                        <a href="" class="fa-stack" title="follow Spottybox on Facebook!">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse fa-fw"></i>
+                        </a> 
+                        <a href="" class="fa-stack" title="follow Spottybox on twitter!">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse fa-fw"></i>
+                        </a> 
+                        <a href="" class="fa-stack" title="follow Spottybox on instagram!">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-instagram fa-stack-1x fa-inverse fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a id="subservice-link" href="http://subservice.co" title="Go to subservice.co"><img src="public/imgs/subservice-logo.png"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright row">
+                    <div class="col-sm-6 col-sm-offset-3 text-center">
+                        &copy;Spottybox 2012 - 2013 All Rights Reserved
+                    </div>
+                    <a href="http://capsule.vc" title="go to capsule.vc" id="capsule-link">
+                        <img width="129" height="32" src="public/imgs/capsule-logo.png" alt="got to capsule.vc"/>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="public/js/jquery-1.11.0.min.js"></script>
+        <script src="public/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="public/js/jquery.validate.min.js"></script>
+        <script src="public/js/retina-1.1.0.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script src="public/js/spotty-box.min.js"></script>
+        
+		<script src="public/js/angular/angular.min.js"></script>
+        <script src="public/js/angular/angular-route.min.js"></script>
+        <script src="public/js/angular/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <script src="public/js/controllers/checkout.min.js"></script>
+        <script src="public/js/angucomplete.min.js"></script>
+        <script src="public/js/controllers/checkout.js" ></script>
+       <script src="public/js/app.js" ></script>
+        
 
-        </body>
-        </html>
+    </body>
+</html>
