@@ -1,0 +1,69 @@
+nav {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.navbar-header .navbar-brand {
+  width: 140px;
+  height: 78px;
+  padding-top: 4px;
+  margin: auto;
+  float: none;
+  text-align: center;
+}
+.navbar-header .navbar-brand img {
+  max-width: 100%;
+}
+.navbar-header .navbar-toggle {
+  float: none;
+  position: absolute;
+  height: 37px;
+  top: 13px;
+  right: 6px;
+  border: 2px solid black;
+  border-radius: 0px;
+  color: black;
+}
+.navbar-header .navbar-toggle:hover {
+  background: white;
+  box-shadow: 0px 0px 4px 1px black;
+}
+.navbar-header .navbar-toggle .icon-bar {
+  background-color: black;
+}
+.navbar-collapse .main-logo {
+  position: absolute;
+  left: 15px;
+  float: none;
+  width: auto;
+}
+.navbar-collapse .menu-wrap {
+  float: right;
+  padding: 0px 15px;
+}
+.navbar-collapse .first-wrap {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.navbar-collapse .last-wrap {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.navbar-collapse .paw {
+  display: none!important;
+}
+.hero .value-proposition .img-wrap {
+  max-width: 100%;
+}
+.hero .value-proposition img {
+  max-width: 100%;
+}
+.hero .cta-button {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.checkout-progress ul.progress-indicator li.checkpoint > a > span.icon {
+  border-radius: 100px;
+  border: none!important;
+}
