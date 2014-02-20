@@ -34,7 +34,11 @@ checkoutControllers.controller('checkoutCtrl', ['$scope','$http', '$modal', func
 
 
 	// initiate checkoutform
-	$('checkout-form').validate();
+	$('checkout-form').validate({
+		invalidHandler : function () {
+			
+		}
+	});
 	
 
 	$scope.addingDog = true;
@@ -186,9 +190,6 @@ checkoutControllers.controller('checkoutCtrl', ['$scope','$http', '$modal', func
 		}else {
 			$scope.showError('Invalid details','Some of the details you entered were invalid. Please check the red fields. (note for dev: fields on the current form are being validated using jquery.validate.js plugin)');
 		}
-
-
-
 
 		//$('#checkout-wizard').carousel('next');
 	}

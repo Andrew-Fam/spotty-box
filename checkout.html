@@ -296,10 +296,10 @@
 												<input type="text" name="suburb" ng-model="newOrder.billing.suburb" class="full-width required" placeholder="Suburb"/>
 											</div>
 											<div class="col-sm-3">
-												<input type="text" name="state" ng-model="newOrder.billing.state" class="full-width required" placeholder="State"/>
+												<input type="text" name="state" ng-model="newOrder.billing.state" class="full-width required" maxlength="3" placeholder="State"/>
 											</div>
 											<div class="col-sm-3">
-												<input type="text" name="postcode" ng-model="newOrder.billing.postcode" class="full-width required" placeholder="Postcode"/>
+												<input type="text" name="postcode" ng-model="newOrder.billing.postcode" class="full-width required" maxlength="4"  placeholder="Postcode"/>
 											</div>
 										</fieldset>
 										<h2>Billing info</h2>
@@ -308,7 +308,7 @@
 												<input type="text" name="creditCardNumber" ng-model="newOrder.billing.creditcard" class="full-width required" placeholder="Credit card number"/>
 											</div>
 											<div class="col-sm-2">
-												<input type="text" name="cvv" ng-model="newOrder.billing.cvv" class="full-width required" placeholder="CVV"/>
+												<input type="text" name="cvv" ng-model="newOrder.billing.cvv" class="full-width required" maxlength="3" placeholder="CVV"/>
 											</div>
 											<div class="col-sm-2">
 												<input type="text" name="expiryMonth" ng-model="newOrder.billing.expiryMonth" class="full-width required" maxlength="2" placeholder="mm"/>
@@ -320,7 +320,7 @@
 										<h2>Your Spotty Box account</h2>
 										<fieldset class="row">
 											<div class="col-sm-6">
-												<input type="email" name="email" ng-model="newOrder.account.email" class="full-width required" placeholder="Email address"/>
+												<input type="email" name="email" ng-model="newOrder.account.email" class="full-width required email" placeholder="Email address"/>
 											</div>
 											<div class="col-sm-6">
 												<input type="password" name="password" ng-model="newOrder.account.password" class="full-width required" placeholder="Make a password"/>
